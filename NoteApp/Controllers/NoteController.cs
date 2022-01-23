@@ -22,6 +22,7 @@ namespace NoteApp.Controllers
         }
 
         //Get
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
@@ -56,6 +57,7 @@ namespace NoteApp.Controllers
         }
 
         //Get
+        [HttpGet]
         public IActionResult DeleteGet(int? id) 
         {
             if (id == null || id == 0)
@@ -84,7 +86,8 @@ namespace NoteApp.Controllers
         }
 
         //Get
-        public IActionResult UpdateGet(int? id) 
+        [HttpGet]
+        public IActionResult Update(int? id) 
         {
             if (id == null || id == 0)
             {

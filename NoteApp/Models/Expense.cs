@@ -12,13 +12,13 @@ namespace NoteApp.Models
         [Key]
         public int Id { get; set; }
 
-        [DisplayName("Expense name")]
+        [DisplayName("Покупка")]
         [Required]
         public string ExpenseName { get; set; }
 
-        [DisplayName("Expense price")]
+        [DisplayName("Сумма покупки")]
         [Required]
-        [Range(1, int.MaxValue, ErrorMessage = "The price is not valid")]
+        [Range(1, int.MaxValue, ErrorMessage = "Неверное значение")]
         public int ExpensePrice { get; set; }
     }
 }

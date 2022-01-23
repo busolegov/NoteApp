@@ -12,10 +12,10 @@ namespace NoteApp.Models
         [Key]
         public int Id { get; set; }
 
-        [DisplayName("Note name")]
+        [DisplayName("Заголовок")]
         public string NoteName { get; set; }
 
-        [DisplayName("Note text")]
+        [DisplayName("Заметка")]
         [Required]
         public string NoteText { get; set; }
 
