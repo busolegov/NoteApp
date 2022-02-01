@@ -21,14 +21,11 @@ namespace NoteApp.Controllers
             return View(noteList);
         }
 
-        //Get
-        [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
-        //Post
         [HttpPost]
         public IActionResult Create(Note note)
         {
@@ -42,8 +39,6 @@ namespace NoteApp.Controllers
 
         }
 
-        //Post
-        [HttpPost]
         public IActionResult Delete(int? id) 
         {
             var ex = _db.Notes.Find(id);
@@ -56,8 +51,6 @@ namespace NoteApp.Controllers
             return RedirectToAction("Index");
         }
 
-        //Get
-        [HttpGet]
         public IActionResult DeleteGet(int? id) 
         {
             if (id == null || id == 0)
@@ -72,7 +65,6 @@ namespace NoteApp.Controllers
             return View(ex);
         }
 
-        //Post
         [HttpPost]
         public IActionResult Update(Note note) 
         {
@@ -85,8 +77,6 @@ namespace NoteApp.Controllers
             return View(note);
         }
 
-        //Get
-        [HttpGet]
         public IActionResult Update(int? id) 
         {
             if (id == null || id == 0)

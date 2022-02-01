@@ -16,14 +16,12 @@ namespace NoteApp.Controllers
             _db = db;
         }
 
-        [HttpGet]
         public IActionResult Index()
         {
             IEnumerable <Expense> expenseList = _db.Expenses;
             return View(expenseList);
         }
 
-        [HttpGet]
         public IActionResult Create() 
         {
             return View();
@@ -42,7 +40,6 @@ namespace NoteApp.Controllers
 
         }
 
-        //Post
         [HttpPost]
         public IActionResult Delete(int? id) 
         {
@@ -56,8 +53,6 @@ namespace NoteApp.Controllers
             return RedirectToAction("Index");
         }
 
-        //Get
-        [HttpGet]
         public IActionResult DeleteGet(int? id)
         {
             if (id == null || id == 0)
@@ -72,8 +67,6 @@ namespace NoteApp.Controllers
             return View(ex);
         }
 
-        //Get
-        [HttpGet]
         public IActionResult Update(int? id)
         {
             if (id == null || id == 0)
@@ -88,7 +81,6 @@ namespace NoteApp.Controllers
             return View(ex);
         }
 
-        //Post
         [HttpPost]
         public IActionResult Update(Expense expense)
         {
